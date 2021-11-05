@@ -413,6 +413,16 @@ Page {
                                     pageGrep.arrayFocusPos.push(indexOfThisDelegate);
                                 }
 
+                                if (mouse.x + listViewSearch.x + contextMenu.width > pageGrep.width)
+                                {
+                                    contextMenu.leftMargin = mouse.x - contextMenu.width - 30;
+                                }
+                                else
+                                {
+                                    contextMenu.leftMargin = mouse.x + listViewSearch.x + 30;
+                                }
+
+                                contextMenu.topMargin = mouse.y + listViewSearch.y + 100;
                                 contextMenu.popup();
                             }
 
@@ -423,6 +433,8 @@ Page {
 
                         Menu {
                             id: contextMenu
+                            topMargin: 0
+                            leftMargin: 0
 
                             // Open the selected ListItem(s) in text editor
                             Action {

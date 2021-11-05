@@ -32,7 +32,7 @@ ApplicationWindow {
     function saveApplicationState() {
         // Save window state
         let bMaximized = false
-        if(mainWindow.visibility == Window.Maximized)
+        if(mainWindow.visibility === Window.Maximized)
         {
             bMaximized = true;
         }
