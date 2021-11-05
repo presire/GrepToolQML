@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>mainPinePhone.qml</file>
+        <file>Grep.qml</file>
+        <file>aboutQt.qml</file>
+        <file>aboutGrepToolQML.qml</file>
+        <file>GrepPinePhone.qml</file>
+        <file>SettingsPinePhone.qml</file>
+    </qresource>
+</RCC>
