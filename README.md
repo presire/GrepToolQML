@@ -92,7 +92,7 @@ And then, the text and color display will change from "Multi Select: OFF" to "Mu
 <center><img src="HC/GrepToolQML_3.png" width="35%" height="35%" ></center><br>
 <br>
 
-**only PinePhone**<br>
+**PinePhone only**<br>
 To set the editor and diff tools to be used, first, select [Feature] -> [Settings] at the Menu bar.<br>
 Next, press the round button to select the executable for the editor and diff tool.<br>
 Finally, click on the [Save] button.<br>
@@ -104,5 +104,15 @@ Next, press the switch to select Light (Universal Light) or Dark (Material Dark)
 After changing the color mode, press the [Application Quit] button.<br>
 The software will be automatically restarted and the color mode setting will be reflected.<br>
 <center><img src="HC/GrepToolQML_5.png" width="35%" height="35%" ></center><br>
+<br>
+
+You can open the context menu by long pressing on the searched files and directories.(**PinePhone only**)<br>
+For PC version, the context menu can be displayed by right-clicking the mouse.<br>
+<br>
+<i>**Note:**</I><br>
+<i>**The editor can open a single file.**</I><br>
+<i>**Diff Tool can be used to diff 2 files.**</I><br>
+<center><img src="HC/GrepToolQML_6.png" width="35%" height="35%" ></center><br>
+
 <br>
 <br>
