@@ -1,15 +1,6 @@
-<<<<<<< Updated upstream
-# GrepToolQML for PinePhone and Linux PC(x64_64)  
-
-# Preface  
-GrepToolQML is a scaling software for PinePhone and Linux PC(x86_64).<br>
-<br>
-
-=======
 # GrepToolQML for PinePhone and Linux PC(x64_64)
 
 # Preface  
->>>>>>> Stashed changes
 GrepToolQML is a software to be able to search, edit, delete, and compare differences easily.<br>
 <br>
 This article uses Mobian(AArch64) and SUSE Linux Enterprise(x86_64).<br>
