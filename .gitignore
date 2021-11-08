@@ -1,0 +1,11 @@
+# Build Project
+Debug/
+Relese/
+build/
+windows/*.zip
+
+# editor backups and temporary files
+*~
+*.bak
+*.swp
+*.org

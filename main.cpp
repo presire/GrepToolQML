@@ -30,27 +30,28 @@ int main(int argc, char *argv[])
     // Trying to close the Lock File, if the attempt is unsuccessful for 100 milliseconds,
     // then there is a Lock File already created by another process.
     // Therefore, we throw a warning and close the program
-//    QLockFile lockFile(QDir::temp().absoluteFilePath("GrepToolQML.lock"));
-//    if(!lockFile.tryLock(100))
-//    {
-//        return 1;
-//    }
+    //QLockFile lockFile(QDir::temp().absoluteFilePath("GrepToolQML.lock"));
+    //if(!lockFile.tryLock(100))
+    //{
+    //    return 1;
+    //}
 
     // Set GrepToolQML's Icon
     app.setWindowIcon(QIcon(":/Image/GrepToolQML.png"));
 
     QSettings settings;
-    QString style = QQuickStyle::name();
-    if (!style.isEmpty())
+    CMainWindow mainWindow;
+    bool bColorMode = mainWindow.getColorMode();
+    if (bColorMode)
     {
-        settings.setValue("style", style);
+        QQuickStyle::setStyle("Material");
     }
     else
     {
-        QQuickStyle::setStyle(settings.value("style").toString());
+        QQuickStyle::setStyle("Universal");
     }
 
-    // メイン画面のコア処理
+    // Register the class so that it can be used in QML
     qmlRegisterType<CMainWindow>("MainWindow", 1, 0, "CMainWindow");
 
     QQmlApplicationEngine engine;

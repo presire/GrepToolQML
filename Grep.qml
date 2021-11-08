@@ -376,6 +376,7 @@ Page {
                                 let isFile = listModel.get(indexOfThisDelegate).file;
                                 if(isFile === 0)
                                 {
+                                    // Make sure editor is selected
                                     if(editEditor.text === qsTr(""))
                                     {
                                         errorDialog.messageTitle = qsTr("Error : Don't open file");
@@ -385,6 +386,7 @@ Page {
                                         return;
                                     }
 
+                                    // Check file (existence and permission)
                                     let file = listModel.get(indexOfThisDelegate).filePath + listModel.get(indexOfThisDelegate).fileName;
                                     let iRet = mainWindowModel.openFile(editEditor.text, listModel.get(indexOfThisDelegate).fileName, listModel.get(indexOfThisDelegate).filePath);
                                     if(iRet === -1)
@@ -428,6 +430,16 @@ Page {
                             // Diff two files
                             if(pageGrep.arrayFocusPos.length == 2)
                             {
+                                // Make sure diff tool is selected
+                                if(editDiff.text === qsTr(""))
+                                {
+                                    errorDialog.messageTitle = qsTr("Error : Don't open file");
+                                    errorDialog.messageText  = qsTr("No diff tool is selected.\n") + qsTr("Please select the diff tool you want to use.");
+                                    errorDialog.open();
+                                    editDiff.focus = true;
+                                    return;
+                                }
+
                                 // Check Files or Directories
                                 let index_left = pageGrep.arrayFocusPos.shift();
                                 if(listModel.get(index_left).file === 0)

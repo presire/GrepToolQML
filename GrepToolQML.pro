@@ -6,7 +6,7 @@ lessThan(QT_MAJOR_VERSION, 5) {
 }
 
 # Version Information
-VERSION = 1.0.3
+VERSION = 1.0.4
 VERSTR = '\\"$${VERSION}\\"'  # place quotes around the version string
 DEFINES += VER=\"$${VERSTR}\" # create a VER macro containing the version string
 
