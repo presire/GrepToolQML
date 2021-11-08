@@ -96,10 +96,10 @@ Finally, click on the [Save] button.<br>
 <center><img src="HC/GrepToolQML_4.png" width="35%" height="35%" ></center><br>
 <br>
 
-To set the color mode, select [Mode] -> [Dark Mode].
+To set the color mode, select [Mode] -> [Dark Mode].<br>
 Next, press the switch to select Light (Universal Light) or Dark (Material Dark).<br>
 After changing the color mode, press the [Application Quit] button.<br>
-The software will be automatically restarted and the color mode setting will be reflected.<br>
+~~The software will be automatically restarted and the color mode setting will be reflected.~~<br>
 <center><img src="HC/GrepToolQML_5.png" width="35%" height="35%" ></center><br>
 <br>
 

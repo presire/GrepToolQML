@@ -31,7 +31,7 @@ ApplicationWindow {
     function saveApplicationState() {
         // Save window state
         let bMaximized = false
-        if(mainWindow.visibility == Window.Maximized)
+        if(mainWindow.visibility === Window.Maximized)
         {
             bMaximized = true;
         }
@@ -95,7 +95,7 @@ ApplicationWindow {
 
         // [File] Menu
         Menu {
-            title: qsTr("&File(&F)")
+            title: qsTr("File(&F)")
 
             // [Save Password] SubMenu
 //            Action {
@@ -116,7 +116,7 @@ ApplicationWindow {
 
         // [Feature] Menu
         Menu {
-            title: qsTr("&Feature(&C)")
+            title: qsTr("Feature(&I)")
 
             // [Grep] SubMenu
             Action {
@@ -135,7 +135,7 @@ ApplicationWindow {
 
         // [Mode] Menu
         Menu {
-            title: qsTr("&Mode(&M)")
+            title: qsTr("Mode(&M)")
 
             // [Save Password] SubMenu
             Action {
@@ -150,7 +150,7 @@ ApplicationWindow {
 
         // [Help] Menu
         Menu {
-            title: qsTr("&Help(&H)")
+            title: qsTr("Help(&H)")
 
             // [about GrepToolQML] SubMenu
             Action {
@@ -356,7 +356,7 @@ ApplicationWindow {
                                 mainWindowModel.setColorMode(false);
                             }
 
-                            mainWindowModel.restartSoftware();
+                            //mainWindowModel.restartSoftware();
 
                             Qt.quit();
                         }
