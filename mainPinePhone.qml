@@ -7,6 +7,7 @@ import Qt.labs.settings 1.1
 import QtQuick.Controls.Material 2.15
 import QtQuick.Controls.Universal 2.15
 import MainWindow 1.0
+import "WindowState.js" as WindowState
 
 
 ApplicationWindow {
@@ -18,6 +19,10 @@ ApplicationWindow {
     visible: true
     visibility: mainWindowModel.getMainWindowMaximized() ?  Window.Maximized : Window.Windowed
     title: qsTr("GrepToolQML for PinePhone")
+
+    Component.onCompleted: {
+        WindowState.menuHeight = mainMenu.height;
+    }
 
     CMainWindow {
         id: mainWindowModel;

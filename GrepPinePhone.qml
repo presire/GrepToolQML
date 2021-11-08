@@ -9,6 +9,7 @@ import QtMultimedia 5.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Controls.Universal 2.15
 import MainWindow 1.0
+import "WindowState.js" as WindowState
 
 
 Page {
@@ -134,7 +135,6 @@ Page {
                     highlightMoveVelocity: 10
                     highlightResizeDuration : 10
                     highlightResizeVelocity : 10
-                    //highlightRangeMode: ListView.StrictlyEnforceRange
                     snapMode: ListView.SnapToItem
 
                     model: ListModel {
@@ -265,6 +265,7 @@ Page {
                         RowLayout {
                             id: itemLayout
                             width: parent.width
+                            spacing: 0
                             Layout.fillWidth: true
 
                             Image {
@@ -413,16 +414,16 @@ Page {
                                     pageGrep.arrayFocusPos.push(indexOfThisDelegate);
                                 }
 
-                                if (mouse.x + listViewSearch.x + contextMenu.width > pageGrep.width)
+                                contextMenu.topMargin = WindowState.menuHeight + listViewSearch.mapToItem(pageGrep, 0, 0).y + parent.mapToItem(listViewSearch, 0, 0).y;
+                                if (listViewSearch.mapToItem(pageGrep, 0, 0).x + mouse.x + contextMenu.width > pageGrep.width)
                                 {
-                                    contextMenu.leftMargin = mouse.x - contextMenu.width - 30;
+                                    contextMenu.leftMargin = mouse.x - contextMenu.width - 50;
                                 }
                                 else
                                 {
-                                    contextMenu.leftMargin = mouse.x + listViewSearch.x + 30;
+                                    contextMenu.leftMargin = mouse.x + listViewSearch.x + 50;
                                 }
 
-                                contextMenu.topMargin = mouse.y + listViewSearch.y + 100;
                                 contextMenu.popup();
                             }
 
@@ -433,8 +434,6 @@ Page {
 
                         Menu {
                             id: contextMenu
-                            topMargin: 0
-                            leftMargin: 0
 
                             // Open the selected ListItem(s) in text editor
                             Action {
@@ -631,15 +630,16 @@ Page {
 
             Label {
                 id: labelCtrl
-                x: pageGrep.x + 10
-                width: parent.width - 20
                 text: pageGrep.ctrlPressed ? qsTr("Multi Select: ON") : qsTr("Multi Select: OFF")
                 font.pointSize: 9
                 color: pageGrep.ctrlPressed ? "#ff5555" : mainWindowModel.getColorMode() ? "white" : "black"
 
-                Layout.alignment: Qt.AlignRight
+                horizontalAlignment: Label.AlignRight
+                verticalAlignment: Label.AlignVCenter
                 Layout.topMargin: 5
                 Layout.rightMargin: 20
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
                 wrapMode: Label.WordWrap
             }

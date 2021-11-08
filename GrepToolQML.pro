@@ -6,7 +6,7 @@ lessThan(QT_MAJOR_VERSION, 5) {
 }
 
 # Version Information
-VERSION = 1.0.1
+VERSION = 1.0.2
 VERSTR = '\\"$${VERSION}\\"'  # place quotes around the version string
 DEFINES += VER=\"$${VERSTR}\" # create a VER macro containing the version string
 
@@ -53,6 +53,7 @@ HEADERS += \
 RESOURCES += \
     qml.qrc \
     ClearListModel.js \
+    WindowState.js \
     Image/Critical.png \
     Image/Directory.png \
     Image/File.png \
@@ -64,6 +65,7 @@ RESOURCES += \
 
 DISTFILES += \
     ClearListModel.js \
+    WindowState.js \
     Image/Critical.png \
     Image/Directory.png \
     Image/File.png \
@@ -109,7 +111,7 @@ Image.path = $${PREFIX}/Image
 Image.files = Image/GrepToolQML.png Image/Qt.svg
 
 Sound.path = $${PREFIX}/Sound
-Sound.files = Sound/Warning.mp3 Sound/Warning.wav
+Sound.files = Sound/Warning.mp3
 
 Applications.path = $${PREFIX}
 Applications.files = Applications/GrepToolQML.desktop
