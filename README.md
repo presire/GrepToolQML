@@ -1,15 +1,15 @@
 # GrepToolQML for PinePhone and Linux PC(x64_64)
 
 # Preface  
-GrepToolQML is a software to be able to search, edit, delete, and compare differences easily.<br>
+GrepToolQML is a software to be able to search, edit, delete, and compare differences easily.  
 <br>
-This article uses Mobian(AArch64) and SUSE Linux Enterprise(x86_64).<br>
-<u>you should be able to install it on other Linux distributions as well.</u><br>
-(Ex. Manjaro ARM, openSUSE TW, ... etc)<br>
+This article uses Mobian(AArch64) and SUSE Linux Enterprise(x86_64).  
+<u>you should be able to install it on other Linux distributions as well.</u>  
+(Ex. Manjaro ARM, openSUSE TW, ... etc)  
 <br>
 
-*Note:*<br>
-*GrepToolQML is created in Qt 5.15, so it requires Qt 5.15 library.*<br>
+*Note:*  
+*GrepToolQML is created in Qt 5.15, so it requires Qt 5.15 library.*  
 <br>
 <br>
 
@@ -28,7 +28,7 @@ Create a directory for installing Qt libraries on PinePhone.<br>
 <br>
 <br>
 
-Get the latest updates on PinePhone.<br>
+Get the latest updates on PinePhone.  
 
     sudo apt update  
     sudo apt dist-upgrade  
@@ -43,7 +43,7 @@ Install the dependencies required to build the GrepToolQML.
 <br>
 
 # 2. Compile & Install GrepToolQML
-Download the source code from GrepToolQML's Github.<br>
+Download the source code from GrepToolQML's Github.  
 
     git clone https://github.com/presire/GrepToolQML.git GrepToolQML
 
@@ -99,6 +99,8 @@ Finally, click on the [Save] button.<br>
 To set the color mode, select [Mode] -> [Dark Mode].<br>
 Next, press the switch to select Light (Universal Light) or Dark (Material Dark).<br>
 After changing the color mode, press the [Application Quit] button.<br>
+<br>
+When restarting GrepToolQML manually, the color mode is changed.<br>
 ~~The software will be automatically restarted and the color mode setting will be reflected.~~<br>
 <center><img src="HC/GrepToolQML_5.png" width="35%" height="35%" ></center><br>
 <br>

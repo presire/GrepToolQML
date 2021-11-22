@@ -2,21 +2,6 @@
 #include "CRunnable.h"
 
 
-namespace
-{
-    QString generateKeyHash( const QString& key, const QString& salt )
-    {
-        QByteArray data;
-
-        data.append(key.toUtf8());
-        data.append(salt.toUtf8());
-        data = QCryptographicHash::hash(data, QCryptographicHash::Sha1).toHex();
-
-        return data;
-    }
-}
-
-
 CRunnable::CRunnable(const QString& key) : m_key(key), m_memLockKey(generateKeyHash(key, "_memLockKey")),
                                            m_sharedmemKey(generateKeyHash(key, "_sharedmemKey")), m_sharedMem(m_sharedmemKey),
                                            m_memLock(m_memLockKey, 1)
@@ -34,6 +19,19 @@ CRunnable::CRunnable(const QString& key) : m_key(key), m_memLockKey(generateKeyH
 CRunnable::~CRunnable()
 {
     release();
+}
+
+
+// Use it for preventing possible glitches with other global kernel objects
+QString CRunnable::generateKeyHash(const QString& key, const QString& salt)
+{
+    QByteArray data;
+
+    data.append(key.toUtf8());
+    data.append(salt.toUtf8());
+    data = QCryptographicHash::hash(data, QCryptographicHash::Sha1).toHex();
+
+    return data;
 }
 
 

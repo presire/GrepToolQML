@@ -8,6 +8,10 @@
 
 class CRunnable
 {
+private:
+    QString generateKeyHash(const QString& key, const QString& salt);
+
+
 public:
     CRunnable(const QString& key);
     ~CRunnable();
@@ -15,6 +19,7 @@ public:
     bool isAnotherRunning();
     bool tryToRun();
     void release();
+
 
 private:
     const QString m_key;

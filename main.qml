@@ -93,6 +93,12 @@ ApplicationWindow {
         y: 0
         width: mainWindow.width
 
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            color: mainWindowModel.getColorMode() ? "#424242" : "white"
+        }
+
         // [File] Menu
         Menu {
             title: qsTr("File(&F)")

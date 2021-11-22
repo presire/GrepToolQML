@@ -11,11 +11,11 @@
 int main(int argc, char *argv[])
 {
     // Disable multiple activation
-    CRunnable Runnable("GrepToolQML_x8waTME6UrFHCbwkf739LwWk");
+    CRunnable Runnable("GrepToolQML-X8WAT-ME6UR-FHCBW-KF739-LWWkV");
     if (!Runnable.tryToRun())
     {
         std::cerr << "GrepToolQML is already running." << std::endl;
-        return 0;
+        return -1;
     }
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
